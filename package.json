@@ -1,0 +1,37 @@
+{
+  "name": "cypress-custom-query-selector",
+  "description": "Overwrites cypress get and find to be able to select \"data-\" attributes",
+  "version": "0.0.1",
+  "private": false,
+  "author": "Florian Goussin",
+  "homepage": "",
+  "contributors": [
+    "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "end to end",
+    "test",
+    "selector",
+    "overwrite",
+    "custom",
+    "commands"
+  ],
+  "repository": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0"
+  }
+}
