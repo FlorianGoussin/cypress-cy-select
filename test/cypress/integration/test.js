@@ -14,6 +14,7 @@ describe("Test cypress overwritten commands", () => {
     cy.get("body > .modal")
       .find("-cy:my-custom-selector > .some-class")
       .find("-cy:my-custom-selector-child -cy:my-custom-selector-grand-child")
+      // .find("cy|my-custom-selector-child cy|my-custom-selector-grand-child")
     cy.get("body > .modal")
       .find("-cy:my-custom-selector > .some-class")
       .find("-cy:my-custom-selector-child")
