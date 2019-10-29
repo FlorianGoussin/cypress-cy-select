@@ -9,7 +9,8 @@
     "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-cypress": "npx cypress open --project test"
   },
   "keywords": [
     "cypress",

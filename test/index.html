@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test cypress overwriten commands</title>
+</head>
+<body>
+  <div class="modal">
+    <div class="modal-body">
+      <div data-cy="my-custom-selector">
+        <div class="some-class">
+          <div class="some-class2">
+            <div class="some-class3">
+              <div data-cy="my-custom-selector-child">
+                <div data-cy="my-custom-selector-grand-child"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer"></div>
+  </div>
+</body>
+</html>
