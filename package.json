@@ -1,10 +1,10 @@
 {
   "name": "cypress-cy-select",
   "description": "Allows cypress get and find to use cy shorthand notation",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "author": "Florian Goussin",
-  "main": "src/commands.js",
+  "main": "dist/commands.min.js",
   "homepage": "",
   "contributors": [
     "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
