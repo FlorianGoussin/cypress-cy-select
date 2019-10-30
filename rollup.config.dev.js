@@ -1,4 +1,3 @@
-// import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
 
 const config = {
@@ -13,8 +12,7 @@ const config = {
   plugins: [
     babel({
         exclude: "node_modules/**"
-    }),
-    // terser()
+    })
   ],
 }
 export default config

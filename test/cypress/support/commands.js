@@ -24,7 +24,5 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-// import '../../../src/commands.js'
-
 import commands from '../../../src/commands.js'
-commands()
+commands({ name: "cy", separator: "|" })
