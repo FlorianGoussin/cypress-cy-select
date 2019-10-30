@@ -12,7 +12,7 @@
     "build-dev": "npx rollup --config --file dist/commands.js",
     "build-prod": "npx rollup --config --file dist/commands.min.js",
     "build": "npm run build-dev && npm run build-prod",
-    "test": "jest",
+    "test": "jest --verbose ./test/jest",
     "test-cypress": "npx cypress open --project test"
   },
   "keywords": [

@@ -1,11 +1,17 @@
 /**
+ * default regex defining the shortcut selector format
+ * @type {RegExp}
+ */
+export const defaultRegex = /(^-.+\:)/
+
+/**
  * format any matched attribute to its proper css selector notation
  * e.g. "-cy:my-selector-name" will be replaced by [data-cy="my-selector-name"]
  * @param  {string}  selectors  the css selectors
  * @param  {RegExp}  regExp     the regular expression to detect the attribute selector short notation
  * @return {string}             the formatted selectors
  */
-export const formatSelectors = (selectors, regExp = /(^-.+\:)/) => {
+export const formatSelectors = (selectors, regExp) => {
   selectors
   .split(" ")
   .forEach((selector) => {

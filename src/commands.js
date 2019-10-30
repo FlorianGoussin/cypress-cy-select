@@ -1,10 +1,12 @@
-import { formatSelectors } from "./lib"
+import { defaultRegex, formatSelectors } from "./lib"
 
-Cypress.Commands.overwrite('get', (originalFn, selectors) =>
-  originalFn(formatSelectors(selectors))
-)
+export default function({ regex = defaultRegex } = {}) {
+  const get = (originalFn, selectors) =>
+    originalFn(formatSelectors(selectors, regex))
 
-Cypress.Commands.overwrite('find', (originalFn, subject, selectors) =>
-  originalFn(subject, formatSelectors(selectors))
-)
+  const find = (originalFn, subject, selectors) =>
+    originalFn(subject, formatSelectors(selectors, regex))
 
+  Cypress.Commands.overwrite('get', get)
+  Cypress.Commands.overwrite('find', find)
+}
