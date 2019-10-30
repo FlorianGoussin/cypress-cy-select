@@ -9,9 +9,7 @@
     "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
   ],
   "scripts": {
-    "build-dev": "npx rollup --config rollup.config.dev.js --file dist/commands.js",
-    "build-prod": "npx rollup --config rollup.config.prod.js --file dist/commands.min.js",
-    "build": "npm run build-dev && npm run build-prod",
+    "build": "npx rollup --config rollup.config.js",
     "test": "jest --verbose ./test/jest",
     "test-cypress": "npx cypress open --project test"
   },
