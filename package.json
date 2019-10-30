@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": false,
   "author": "Florian Goussin",
+  "main": "src/commands.js",
   "homepage": "",
   "contributors": [
     "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
