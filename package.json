@@ -1,6 +1,6 @@
 {
-  "name": "cypress-custom-query-selector",
-  "description": "Overwrites cypress get and find to be able to select \"data-\" attributes",
+  "name": "cypress-cy-select",
+  "description": "Allows cypress get and find to use cy shorthand notation",
   "version": "0.0.1",
   "private": false,
   "author": "Florian Goussin",
