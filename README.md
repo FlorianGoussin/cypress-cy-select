@@ -19,3 +19,8 @@ e.g.
 ```
 cy.get("cy|mySelector .myClass1 > .myClass2 tagName")
 ```
+
+cypress will actually call:
+```
+cy.get('[data-cy="mySelector"] .myClass1 > .myClass2 tagName')
+```
