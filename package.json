@@ -24,7 +24,8 @@
   "scripts": {
     "build": "npx rollup --config rollup.config.js",
     "test": "jest --verbose ./test/jest",
-    "test-cypress": "npx cypress open --project test",
+    "test-cypress": "npx cypress run --project test",
+    "test-cypress-open": "npx cypress open --project test",
     "prettier": "npx prettier --find-config-path --write ./src/*.js ./test/*.js ./test/cypress/**/*.js"
   },
   "devDependencies": {
