@@ -1,20 +1,8 @@
 {
   "name": "cypress-cy-select",
   "description": "Allows cypress get and find to use cy shorthand notation",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "private": false,
-  "author": "Florian Goussin",
-  "main": "dist/commands.min.js",
-  "homepage": "",
-  "contributors": [
-    "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
-  ],
-  "scripts": {
-    "build": "npx rollup --config rollup.config.js",
-    "test": "jest --verbose ./test/jest",
-    "test-cypress": "npx cypress open --project test",
-    "prettier": "npx prettier --find-config-path --write ./src/*.js ./test/*.js ./test/cypress/**/*.js"
-  },
   "keywords": [
     "cypress",
     "e2e",
@@ -25,13 +13,20 @@
     "custom",
     "commands"
   ],
-  "repository": "",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
+  "author": "Florian Goussin",
+  "homepage": "https://github.com/FlorianGoussin/cypress-cy-select",
+  "repository": "https://github.com/FlorianGoussin/cypress-cy-select",
+  "license": "MIT",
+  "contributors": [
+    "Florian Goussin <florian.goussin@gmail.com> (https://github.com/FlorianGoussin)"
   ],
+  "main": "dist/commands.min.js",
+  "scripts": {
+    "build": "npx rollup --config rollup.config.js",
+    "test": "jest --verbose ./test/jest",
+    "test-cypress": "npx cypress open --project test",
+    "prettier": "npx prettier --find-config-path --write ./src/*.js ./test/*.js ./test/cypress/**/*.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
