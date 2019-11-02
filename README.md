@@ -7,25 +7,47 @@ Allows cypress get and find to use cy shorthand notation within get and find fun
 npm i --save-dev cypress-cy-select
 ```
 
-In commands.js:
+## Usage
+
+In support/commands.js or support/index.js:
 
 ```
 import setup from 'cypress-cy-select';
 setup();
 ```
 
-## Usage
-
 Use cy.get as you would normally use it, but you can now select data-cy with a shorthand notation: cy|mySelector
 
-## Example
 
-If you use the get command this way:
+This:
 ```
 cy.get("cy|mySelector .myClass1 > .myClass2 tagName")
 ```
 
-Cypress will actually call:
+will be actually formatted to:
 ```
 cy.get('[data-cy="mySelector"] .myClass1 > .myClass2 tagName')
 ```
+
+
+Alternatively, if you don't want the defaults, you can pass a configuration object:
+
+```
+const config = {
+  name: 'e2e',
+  separator: ':'
+}
+setup(config);
+```
+
+This:
+```
+cy.get("e2e:mySelector .myClass1 > .myClass2 tagName")
+```
+
+will be actually formatted to:
+```
+cy.get('[data-e2e="mySelector"] .myClass1 > .myClass2 tagName')
+```
+
+
