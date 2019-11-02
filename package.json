@@ -1,7 +1,7 @@
 {
   "name": "cypress-cy-select",
   "description": "Allows cypress get and find to use cy shorthand notation",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "keywords": [
     "cypress",
