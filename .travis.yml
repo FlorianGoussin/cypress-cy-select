@@ -17,3 +17,4 @@ install:
   - npm ci
 script:
   - $(npm bin)/cypress run --project test
+  - jest --verbose ./test/jest
