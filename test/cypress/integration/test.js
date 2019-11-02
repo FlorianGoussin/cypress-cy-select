@@ -2,7 +2,7 @@ import commands from '../../../src/commands.js'
 
 describe('Test cypress overwritten commands', () => {
   before(() => {
-    commands({ name: 'cy', separator: '|' })
+    commands()
   })
 
   beforeEach(() => {
@@ -27,5 +27,14 @@ describe('Test cypress overwritten commands', () => {
       .find('cy|my-custom-selector-child')
       .find('cy|my-custom-selector-grand-child')
       .should('exist')
+  })
+
+  it('should let the user specify its own configuration', () => {
+    commands({ name: 'cy', separator: ':' })
+    cy.get('body > .modal cy:my-custom-selector').should('exist')
+    commands({ name: 'cy', separator: '-' })
+    cy.get('body > .modal cy-my-custom-selector').should('exist')
+    commands({ name: 'cy', separator: '_' })
+    cy.get('body > .modal cy_my-custom-selector').should('exist')
   })
 })

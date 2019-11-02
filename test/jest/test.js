@@ -17,25 +17,3 @@ test('should allow developers to specify their own config', () => {
     expectedResult,
   )
 })
-
-test('should allow developers to specify their own config for multiple attributes', () => {
-  const selectors =
-    'body > .modal test|my-test-value display|table-row > e2e|my-custom-selector > .some-class e2e|my-custom-selector-child e2e|my-custom-selector-grand-child'
-  const expectedResult =
-    'body > .modal [data-test="my-test-value"] [data-display="table-row"] > [data-e2e="my-custom-selector"] > .some-class [data-e2e="my-custom-selector-child"] [data-e2e="my-custom-selector-grand-child"]'
-  expect(
-    formatSelectors(selectors, {
-      multiple: [
-        {
-          name: 'e2e',
-        },
-        {
-          name: "display"
-        },
-        {
-          name: "test"
-        }
-      ]
-    }),
-  ).toBe(expectedResult)
-})
