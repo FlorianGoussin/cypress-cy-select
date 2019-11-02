@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/FlorianGoussin/cypress-cy-select.svg?branch=master)](https://travis-ci.com/FlorianGoussin/cypress-cy-select)
+
 # cypress-cy-select
 Allows cypress get and find to use cy shorthand notation within get and find functions
 
