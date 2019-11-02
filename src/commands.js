@@ -1,4 +1,4 @@
-import { formatSelectors } from "./lib"
+import { formatSelectors } from './lib'
 
 export default function(...args) {
   const get = (originalFn, selectors) =>
