@@ -1,7 +1,7 @@
 {
   "name": "cypress-cy-select",
-  "description": "Allows cypress get and find to use cy shorthand notation",
-  "version": "0.1.4",
+  "description": "cy shorthand notation for cypress get and find functions",
+  "version": "0.1.5",
   "private": false,
   "keywords": [
     "cypress",
@@ -11,7 +11,9 @@
     "selector",
     "overwrite",
     "custom",
-    "commands"
+    "commands",
+    "get",
+    "find"
   ],
   "author": "Florian Goussin",
   "homepage": "https://github.com/FlorianGoussin/cypress-cy-select",

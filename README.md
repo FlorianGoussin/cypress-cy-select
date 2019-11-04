@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.com/FlorianGoussin/cypress-cy-select.svg?branch=master)](https://travis-ci.com/FlorianGoussin/cypress-cy-select)
 
 # cypress-cy-select
-Allows cypress get and find to use cy shorthand notation within get and find functions
+
+cy shorthand notation for cypress get and find functions
 
 ## Install
 
@@ -20,17 +21,17 @@ setup();
 
 Use cy.get as you would normally use it, but you can now select data-cy with a shorthand notation: cy|mySelector
 
-
 This:
+
 ```
 cy.get("cy|mySelector .myClass1 > .myClass2 tagName")
 ```
 
 will be actually formatted to:
+
 ```
 cy.get('[data-cy="mySelector"] .myClass1 > .myClass2 tagName')
 ```
-
 
 Alternatively, if you don't want the defaults, you can pass a configuration object:
 
@@ -43,13 +44,13 @@ setup(config);
 ```
 
 This:
+
 ```
 cy.get("e2e:mySelector .myClass1 > .myClass2 tagName")
 ```
 
 will be actually formatted to:
+
 ```
 cy.get('[data-e2e="mySelector"] .myClass1 > .myClass2 tagName')
 ```
-
-
