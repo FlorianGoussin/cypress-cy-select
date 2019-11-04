@@ -2,7 +2,7 @@
 
 # cypress-cy-select
 
-cy shorthand notation for cypress get and find functions
+data-cy shorthand notation for cypress get and find functions
 
 ## Install
 
