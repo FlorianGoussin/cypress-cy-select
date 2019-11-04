@@ -3,6 +3,7 @@ src
 test
 rollup.config.js
 babel.config.js
+cypress.json
 .gitignore
 .eslintrc
 .prettierrc.js
