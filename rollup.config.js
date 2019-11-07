@@ -1,28 +1,29 @@
 import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 
-const plugins = () => [
-  babel({
-    exclude: 'node_modules/**',
-  }),
-]
-
-export default {
-  input: 'src/commands.js',
-  output: [
-    {
-      format: 'umd',
-      name: 'commands',
-      entry: 'src.js',
-      dest: 'dist/commands.js',
-      plugins: [plugins()],
-    },
-    {
-      format: 'umd',
-      name: 'commands',
-      entry: 'src/commands.js',
-      dest: 'dist/commands.min.js',
-      plugins: [...plugins(), terser()],
-    }
+const getPlugins = ({ uglify = false } = {}) => {
+  const plugins = [
+    babel({
+      exclude: 'node_modules/**',
+    }),
   ]
+  return uglify ? [terser(), ...plugins] : plugins
 }
+
+export default [{
+  input: 'src/commands.js',
+  plugins: getPlugins({ uglify: true }),
+  output: {
+    file: 'dist/commands.min.js',
+    name: 'commands',
+    format: 'umd',
+  }
+}, {
+  input: 'src/commands.js',
+  plugins: getPlugins(),
+  output: {
+    file: 'dist/commands.js',
+    name: 'commands',
+    format: 'umd',
+  }
+}]

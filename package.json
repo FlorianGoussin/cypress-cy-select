@@ -24,7 +24,7 @@
   ],
   "main": "dist/commands.min.js",
   "scripts": {
-    "build": "npx rollup --config rollup.config.js",
+    "build": "npx rollup -c",
     "test": "jest --verbose ./test/jest",
     "test-cypress": "npx cypress run --project test",
     "test-cypress-open": "npx cypress open --project test",
