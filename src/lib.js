@@ -20,6 +20,7 @@ export const formatSelectors = (
   selectors,
   { name = 'cy', prefix = 'data-', separator = '|' } = {},
 ) => {
+  if (!selectors.includes(name)) return selectors
   selectors.split(' ').forEach(selector => {
     if (selector === '>') return
     if (selector.startsWith(name)) {
