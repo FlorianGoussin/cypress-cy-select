@@ -20,12 +20,12 @@ export const formatSelectors = (
   selectors,
   { name = 'cy', prefix = 'data-', separator = '|' } = {},
 ) => {
-  if (!selectors.includes(name)) return selectors
+  const shortNotation = name + separator
+  const attr = prefix + name
+  if (!selectors.includes(shortNotation)) return selectors
   selectors.split(' ').forEach(selector => {
     if (selector === '>') return
     if (selector.startsWith(name)) {
-      const attr = prefix + name
-      const shortNotation = name + separator
       const value = selector.replace(shortNotation, '')
       selectors = selectors.replace(
         `${shortNotation}${value}`,

@@ -1,7 +1,7 @@
 {
   "name": "cypress-cy-select",
   "description": "data-cy shorthand notation for cypress get and find functions",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "private": false,
   "keywords": [
     "cypress",
