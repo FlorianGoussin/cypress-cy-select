@@ -27,8 +27,9 @@ export const formatSelectors = (
   const shortNotation = name + separator
   const attr = prefix + name
   if (!selectors.includes(shortNotation)) return selectors // return selectors if nothing to format
-  for (const selector of selectors.split(outerSplitRe)) {
-    if (selector.startsWith(name)) {
+  selectors.split(outerSplitRe)
+    .filter(selector => selector.startsWith(shortNotation))
+    .forEach(selector => {
       const selectorWithoutShorthand = selector.replace(shortNotation, '') // remove short notation
       const subSelectors = selectorWithoutShorthand.split(innerSplitRe)
       const value = subSelectors.length ? subSelectors[0] : selectorWithoutShorthand
@@ -36,7 +37,6 @@ export const formatSelectors = (
         `${shortNotation}${value}`,
         `[${attr}=\"${value}\"]`,
       )
-    }
-  }
+    })
   return selectors
 }

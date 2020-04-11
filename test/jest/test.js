@@ -42,6 +42,7 @@ test.each([
 )
 
 test.each([
+  ['e2e:my-custom-selector', '[data-e2e="my-custom-selector"]'],
   [
     'body > .modal e2e:my-custom-selector > .some-class e2e:my-custom-selector-child e2e:my-custom-selector-grand-child',
     'body > .modal [data-e2e="my-custom-selector"] > .some-class [data-e2e="my-custom-selector-child"] [data-e2e="my-custom-selector-grand-child"]',
@@ -49,8 +50,7 @@ test.each([
   [
     'e2e:my-custom-selector:disabled:not(:last-child) > e2e:my-custom-selector-2:disabled:not(:first-child)',
     '[data-e2e="my-custom-selector"]:disabled:not(:last-child) > [data-e2e="my-custom-selector-2"]:disabled:not(:first-child)',
-  ],
-  ['e2e:my-custom-selector', '[data-e2e="my-custom-selector"]'],
+  ]
 ])(
   'should format the cy selector `%s` to proper data-e2e selectors `%s` for a custom config',
   (selectors, expectedResult) => {
