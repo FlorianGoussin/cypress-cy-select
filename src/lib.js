@@ -16,22 +16,27 @@
  * @param  {string}  config.separator  the separator between the attribute and its value - default is '|'
  * @return {string}                    the formatted selectors
  */
+
+const outerSplitRe = /[\s\>\+\~\,]/
+const innerSplitRe = /[\:\[\#\.]/
+
 export const formatSelectors = (
   selectors,
   { name = 'cy', prefix = 'data-', separator = '|' } = {},
 ) => {
   const shortNotation = name + separator
   const attr = prefix + name
-  if (!selectors.includes(shortNotation)) return selectors
-  selectors.split(' ').forEach(selector => {
-    if (selector === '>') return
+  if (!selectors.includes(shortNotation)) return selectors // return selectors if nothing to format
+  for (const selector of selectors.split(outerSplitRe)) {
     if (selector.startsWith(name)) {
-      const value = selector.replace(shortNotation, '')
+      const selectorWithoutShorthand = selector.replace(shortNotation, '') // remove short notation
+      const subSelectors = selectorWithoutShorthand.split(innerSplitRe)
+      const value = subSelectors.length ? subSelectors[0] : selectorWithoutShorthand
       selectors = selectors.replace(
         `${shortNotation}${value}`,
         `[${attr}=\"${value}\"]`,
       )
     }
-  })
+  }
   return selectors
 }
