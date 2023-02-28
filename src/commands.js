@@ -1,12 +1,18 @@
 import { formatSelectors } from './lib'
 
 export default function(...args) {
-  const get = (originalFn, selectors, options) =>
-    originalFn(formatSelectors(selectors, ...args), options)
-
-  const find = (originalFn, subject, selectors, options) =>
-    originalFn(subject, formatSelectors(selectors, ...args), options)
-
-  Cypress.Commands.overwrite('get', get)
-  Cypress.Commands.overwrite('find', find)
+  function get(originalFn, selectors, options) {
+    const innerFn = originalFn.apply(this, [formatSelectors(selectors, ...args), options])
+    return (subject) => {
+      return innerFn(subject)
+    }
+  }
+  function find(originalFn, selectors, options) {
+    const innerFn = originalFn.apply(this, [formatSelectors(selectors, ...args), options])
+    return (subject) => {
+      return innerFn(subject)
+    }
+  }
+  Cypress.Commands.overwriteQuery('get', get)
+  Cypress.Commands.overwriteQuery('find', find)
 }

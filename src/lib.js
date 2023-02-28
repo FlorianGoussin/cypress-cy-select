@@ -22,7 +22,9 @@ export const formatSelectors = (
 ) => {
   const shortNotation = name + separator
   const attr = prefix + name
-  if (!selectors.includes(shortNotation)) return selectors
+  if (!selectors.includes(shortNotation)) {
+    return selectors
+  }
   selectors.split(' ').forEach(selector => {
     if (selector === '>') return
     if (selector.startsWith(name)) {
