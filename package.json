@@ -3,6 +3,7 @@
   "description": "data-cy shorthand notation for cypress get and find functions",
   "version": "0.2.2",
   "private": false,
+
   "keywords": [
     "cypress",
     "e2e",
@@ -24,20 +25,21 @@
   ],
   "main": "dist/commands.min.js",
   "scripts": {
-    "build": "npx rollup -c",
+    "build": "npx rollup -c --format es",
     "test": "jest --verbose ./test/jest",
     "test-cypress": "npx cypress run --project test",
+    "test-cypress-log": "ELECTRON_ENABLE_LOGGING=1 npx cypress run --project test",
     "test-cypress-open": "npx cypress open --project test",
     "prettier": "npx prettier --find-config-path --write ./src/*.js ./test/*.js ./test/cypress/**/*.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "babel-jest": "^25.3.0",
-    "cypress": "^4.3.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-terser": "^0.4.0",
+    "babel-jest": "^29.4.3",
+    "cypress": "^12.7.0",
     "jest": "^29.4.3",
-    "rollup": "^2.6.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-terser": "^5.3.0"
+    "rollup": "^3.17.3"
   }
 }
