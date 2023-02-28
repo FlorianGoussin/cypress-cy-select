@@ -1,4 +1,4 @@
-import commands from '../../../src/commands.js'
+import commands from '../../../dist/commands.js'
 
 describe('Test cypress overwritten commands', () => {
   before(() => {
