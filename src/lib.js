@@ -40,5 +40,5 @@ export const formatSelectors = (
 
 const splitBySpaceWithQuotes = (input) => {
   const regex = /(?:[^\s"']+|["'][^"']*["'])+/g;
-  return input.match(regex).map(match => match).filter(Boolean);
+  return input.match(regex).filter(Boolean);
 }
