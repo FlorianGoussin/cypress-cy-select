@@ -1,6 +1,6 @@
 /**
  * format any matched attribute to its proper css selector notation
- * e.g. "-cy:my-selector-name" will be replaced by [data-cy="my-selector-name"]
+ * e.g. "testid:my-selector-name" will be replaced by [data-testid="my-selector-name"]
  *
  * config example:
  * const config = {
@@ -25,15 +25,20 @@ export const formatSelectors = (
   if (!selectors.includes(shortNotation)) {
     return selectors
   }
-  selectors.split(' ').forEach(selector => {
+  splitBySpaceWithQuotes(selectors).forEach(selector => {
     if (selector === '>') return
     if (selector.startsWith(name)) {
       const value = selector.replace(shortNotation, '')
       selectors = selectors.replace(
         `${shortNotation}${value}`,
-        `[${attr}=\"${value}\"]`,
+        `[${attr}=\"${value.replace(/["']/g, '')}\"]`,
       )
     }
   })
   return selectors
+}
+
+const splitBySpaceWithQuotes = (input) => {
+  const regex = /(?:[^\s"']+|["'][^"']*["'])+/g;
+  return input.match(regex).filter(Boolean);
 }

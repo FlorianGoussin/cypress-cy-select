@@ -17,3 +17,18 @@ test('should allow developers to specify their own config', () => {
     expectedResult,
   )
 })
+
+test('should allow developer to use spaces', () => {
+  const selector = "body > foo:'My long name with spaces'";
+  const expectedResult = 'body > [data-foo="My long name with spaces"]';
+
+  expect(formatSelectors(selector, { name: 'foo', separator: ':' })).toBe(expectedResult)
+})
+
+
+test('should allow developer to use spaces with quotes', () => {
+  const selector = 'body > foo:"My long name with spaces"';
+  const expectedResult = 'body > [data-foo="My long name with spaces"]';
+
+  expect(formatSelectors(selector, { name: 'foo', separator: ':' })).toBe(expectedResult)
+})
