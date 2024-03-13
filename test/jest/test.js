@@ -17,3 +17,18 @@ test('should allow developers to specify their own config', () => {
     expectedResult,
   )
 })
+
+test('should allow developer to use spaces', () => {
+  const selector = "body > foo:'My long name with spaces'";
+  const expectedResult = 'body > [data-foo="My long name with spaces"]';
+
+  expect(formatSelectors(selector, { name: 'foo', separator: ':' })).toBe(expectedResult)
+})
+
+
+test('should allow developer to use any name', () => {
+  const selector = "cy|child";
+  const expectedResult = '[data-cy="child"]';
+
+  expect(formatSelectors(selector)).toBe(expectedResult)
+})
